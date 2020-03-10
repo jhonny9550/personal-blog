@@ -1,4 +1,6 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core';
+import grey from '@material-ui/core/colors/grey';
+import teal from '@material-ui/core/colors/teal';
 
 import NunitoRegularTtf from '../assets/fonts/Nunito-Regular.ttf';
 
@@ -17,6 +19,12 @@ const nunito = {
 };
 
 let theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: grey[900]
+    },
+    secondary: teal
+  },
   typography: {
     fontFamily: 'Nunito, Arial'
   },

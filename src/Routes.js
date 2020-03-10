@@ -14,7 +14,7 @@ export const ROUTE_NAMES = {
 const Routes = () => {
   return (
     <Switch>
-      <Route path={ROUTE_NAMES.HOME} component={Home} />
+      <Route exact path={ROUTE_NAMES.HOME} component={Home} />
       <Route path={ROUTE_NAMES.BLOG} component={Blog} />
       <Route path={ROUTE_NAMES.PROJECTS} component={Projects} />
       <Route path={ROUTE_NAMES.NOT_FOUND}>
