@@ -37,21 +37,21 @@ const Nav = () => {
                 exact
                 to={ROUTE_NAMES.HOME}
               >
-                <Typography variant='body2'>about me</Typography>
+                <Typography variant='body1'>about me</Typography>
               </NavLink>
               <NavLink
                 activeClassName={classes.active}
                 className={classes.link}
                 to={ROUTE_NAMES.BLOG}
               >
-                <Typography variant='body2'>blog</Typography>
+                <Typography variant='body1'>blog</Typography>
               </NavLink>
               <NavLink
                 activeClassName={classes.active}
                 className={classes.link}
                 to={ROUTE_NAMES.PROJECTS}
               >
-                <Typography variant='body2'>projects</Typography>
+                <Typography variant='body1'>projects</Typography>
               </NavLink>
             </div>
           </Container>

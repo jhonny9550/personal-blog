@@ -44,8 +44,26 @@ let theme = createMuiTheme({
     }
   },
   typography: {
-    fontFamily: 'Nunito, Arial',
-    fontSize: 18,
+    fontFamily: 'Nunito, Arial'
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        '@font-face': [nunito]
+      }
+    }
+  }
+});
+
+theme.typography.body1 = {
+  fontSize: '1rem', // 13 px b.16
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '1.3rem'
+  }
+};
+
+/* 
+fontSize: 18,
     h1: {
       fontSize: '2.5em', // 40 px b.16
       fontWeight: 500
@@ -77,15 +95,7 @@ let theme = createMuiTheme({
     button: {
       fontSize: '1em'
     }
-  },
-  overrides: {
-    MuiCssBaseline: {
-      '@global': {
-        '@font-face': [nunito]
-      }
-    }
-  }
-});
+*/
 
 theme = responsiveFontSizes(theme);
 
