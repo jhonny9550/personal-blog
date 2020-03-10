@@ -1,6 +1,7 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core';
 import grey from '@material-ui/core/colors/grey';
 import teal from '@material-ui/core/colors/teal';
+import common from '@material-ui/core/colors/common';
 
 import NunitoRegularTtf from '../assets/fonts/Nunito-Regular.ttf';
 
@@ -19,14 +20,63 @@ const nunito = {
 };
 
 let theme = createMuiTheme({
+  breakpoints: {
+    keys: ['xs', 'xm', 'sm', 'md', 'lg', 'xl'],
+    values: {
+      xs: 0,
+      xm: 400,
+      sm: 600,
+      md: 960,
+      lg: 1366,
+      xl: 1920
+    }
+  },
   palette: {
     primary: {
       main: grey[900]
     },
-    secondary: teal
+    secondary: {
+      main: teal[400],
+      dark: teal[500]
+    },
+    background: {
+      default: common.white
+    }
   },
   typography: {
-    fontFamily: 'Nunito, Arial'
+    fontFamily: 'Nunito, Arial',
+    fontSize: 18,
+    h1: {
+      fontSize: '2.5em', // 40 px b.16
+      fontWeight: 500
+    },
+    h2: {
+      fontSize: '2em', // 32 px b.16
+      fontWeight: 500
+    },
+    h3: {
+      fontSize: '1.75em', // 28 px b.16
+      fontWeight: 500
+    },
+    h4: {
+      fontSize: '1.75em', // 24 px b.16
+      fontWeight: 500
+    },
+    h5: {
+      fontSize: '1.25em' // 20 px b.16
+    },
+    h6: {
+      fontSize: '1em' // 16 px b.16
+    },
+    body1: {
+      fontSize: '1em' // 13 px b.16
+    },
+    body2: {
+      fontSize: 18
+    },
+    button: {
+      fontSize: '1em'
+    }
   },
   overrides: {
     MuiCssBaseline: {

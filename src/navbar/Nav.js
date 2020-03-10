@@ -1,12 +1,12 @@
 import React from 'react';
-import NavLink from 'react-router-dom/NavLink';
+import { NavLink, Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../assets/icons/logo.svg';
 import AppBar from '@material-ui/core/AppBar';
 import Container from '@material-ui/core/Container';
 import Slide from '@material-ui/core/Slide';
 import Toolbar from '@material-ui/core/Toolbar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
 import { ROUTE_NAMES } from '../Routes';
 
 const HideOnScroll = props => {
@@ -21,38 +21,39 @@ const HideOnScroll = props => {
 
 const Nav = () => {
   const classes = useStyles();
+
   return (
     <HideOnScroll>
       <AppBar position='sticky' elevation={0} className={classes.appbar}>
-        <Toolbar className={classes.toolbar}>
-          <Container className={classes.container} maxWidth='lg'>
-            <Toolbar>
-              <Logo className={classes.logo} />
-              <div className={classes.nav}>
-                <NavLink
-                  activeClassName={classes.active}
-                  className={classes.link}
-                  exact
-                  to={ROUTE_NAMES.HOME}
-                >
-                  about me
-                </NavLink>
-                <NavLink
-                  activeClassName={classes.active}
-                  className={classes.link}
-                  to={ROUTE_NAMES.BLOG}
-                >
-                  blog
-                </NavLink>
-                <NavLink
-                  activeClassName={classes.active}
-                  className={classes.link}
-                  to={ROUTE_NAMES.PROJECTS}
-                >
-                  projects
-                </NavLink>
-              </div>
-            </Toolbar>
+        <Toolbar className={classes.toolbar} disableGutters>
+          <Container className={classes.container} maxWidth='md' disableGutters>
+            <Link className={classes.logo} to={ROUTE_NAMES.HOME}>
+              <Logo />
+            </Link>
+            <div className={classes.nav}>
+              <NavLink
+                activeClassName={classes.active}
+                className={classes.link}
+                exact
+                to={ROUTE_NAMES.HOME}
+              >
+                <Typography variant='body2'>about me</Typography>
+              </NavLink>
+              <NavLink
+                activeClassName={classes.active}
+                className={classes.link}
+                to={ROUTE_NAMES.BLOG}
+              >
+                <Typography variant='body2'>blog</Typography>
+              </NavLink>
+              <NavLink
+                activeClassName={classes.active}
+                className={classes.link}
+                to={ROUTE_NAMES.PROJECTS}
+              >
+                <Typography variant='body2'>projects</Typography>
+              </NavLink>
+            </div>
           </Container>
         </Toolbar>
       </AppBar>
@@ -72,22 +73,31 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(3)
   },
   container: {
+    alignItems: 'center',
+    display: 'flex',
     paddingBottom: theme.spacing(3),
     paddingTop: theme.spacing(3)
   },
   link: {
     color: theme.palette.text.primary,
-    fontWeight: 700,
     paddingBottom: theme.spacing(2),
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
     paddingTop: theme.spacing(2),
     textDecoration: 'none',
-    textTransform: 'uppercase'
+    textTransform: 'capitalize'
   },
   logo: {
     marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(10)
+    marginRight: theme.spacing(10),
+    '& > *': {
+      height: 80,
+      width: 80,
+      [theme.breakpoints.up('lg')]: {
+        height: 'unset',
+        width: 'unset'
+      }
+    }
   },
   nav: {
     borderBottomColor: theme.palette.divider,
