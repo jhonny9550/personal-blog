@@ -11,10 +11,7 @@ import { ROUTE_NAMES } from '../Routes';
 
 const HideOnScroll = props => {
   const { children } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
-  const trigger = useScrollTrigger({ target: window });
+  const trigger = useScrollTrigger();
   return (
     <Slide appear={false} direction='down' in={!trigger}>
       {children}
@@ -26,41 +23,39 @@ const Nav = () => {
   const classes = useStyles();
   return (
     <HideOnScroll>
-      <div>
-        <AppBar position='sticky' elevation={0} className={classes.appbar}>
-          <Toolbar className={classes.toolbar}>
-            <Container className={classes.container} maxWidth='lg'>
-              <Toolbar>
-                <Logo className={classes.logo} />
-                <div className={classes.nav}>
-                  <NavLink
-                    activeClassName={classes.active}
-                    className={classes.link}
-                    exact
-                    to={ROUTE_NAMES.HOME}
-                  >
-                    about me
-                  </NavLink>
-                  <NavLink
-                    activeClassName={classes.active}
-                    className={classes.link}
-                    to={ROUTE_NAMES.BLOG}
-                  >
-                    blog
-                  </NavLink>
-                  <NavLink
-                    activeClassName={classes.active}
-                    className={classes.link}
-                    to={ROUTE_NAMES.PROJECTS}
-                  >
-                    projects
-                  </NavLink>
-                </div>
-              </Toolbar>
-            </Container>
-          </Toolbar>
-        </AppBar>
-      </div>
+      <AppBar position='sticky' elevation={0} className={classes.appbar}>
+        <Toolbar className={classes.toolbar}>
+          <Container className={classes.container} maxWidth='lg'>
+            <Toolbar>
+              <Logo className={classes.logo} />
+              <div className={classes.nav}>
+                <NavLink
+                  activeClassName={classes.active}
+                  className={classes.link}
+                  exact
+                  to={ROUTE_NAMES.HOME}
+                >
+                  about me
+                </NavLink>
+                <NavLink
+                  activeClassName={classes.active}
+                  className={classes.link}
+                  to={ROUTE_NAMES.BLOG}
+                >
+                  blog
+                </NavLink>
+                <NavLink
+                  activeClassName={classes.active}
+                  className={classes.link}
+                  to={ROUTE_NAMES.PROJECTS}
+                >
+                  projects
+                </NavLink>
+              </div>
+            </Toolbar>
+          </Container>
+        </Toolbar>
+      </AppBar>
     </HideOnScroll>
   );
 };
