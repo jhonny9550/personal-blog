@@ -80,16 +80,21 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     color: theme.palette.text.primary,
+    flexGrow: 1,
+    textAlign: 'center',
     paddingBottom: theme.spacing(2),
-    paddingLeft: theme.spacing(3),
-    paddingRight: theme.spacing(3),
     paddingTop: theme.spacing(2),
     textDecoration: 'none',
-    textTransform: 'capitalize'
+    textTransform: 'capitalize',
+    [theme.breakpoints.up('sm')]: {
+      flexGrow: 'unset',
+      paddingLeft: theme.spacing(3),
+      paddingRight: theme.spacing(3)
+    }
   },
   logo: {
     marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(10),
+    marginRight: theme.spacing(3),
     '& > *': {
       height: 80,
       width: 80,
@@ -97,6 +102,9 @@ const useStyles = makeStyles(theme => ({
         height: 'unset',
         width: 'unset'
       }
+    },
+    [theme.breakpoints.up('sm')]: {
+      marginRight: theme.spacing(10)
     }
   },
   nav: {
@@ -105,8 +113,11 @@ const useStyles = makeStyles(theme => ({
     borderBottomWidth: 2,
     display: 'flex',
     flexGrow: 1,
-    justifyContent: 'flex-end',
-    textAlign: 'right'
+    justifyContent: 'space-evenly',
+    textAlign: 'right',
+    [theme.breakpoints.up('sm')]: {
+      justifyContent: 'flex-end'
+    }
   },
   toolbar: {
     backgroundColor: theme.palette.background.default

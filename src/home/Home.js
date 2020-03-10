@@ -122,7 +122,7 @@ const useStyles = makeStyles(theme => ({
   info: {
     padding: theme.spacing(4),
     maxWidth: 500,
-    [theme.breakpoints.up('xm')]: {
+    [theme.breakpoints.up('sm')]: {
       padding: 'unset'
     }
   }
