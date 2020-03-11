@@ -55,6 +55,10 @@ let theme = createMuiTheme({
   }
 });
 
+theme.typography.h5.fontWeight = 700;
+theme.typography.h3.fontWeight = 700;
+theme.typography.subtitle1.fontWeight = 900;
+
 theme.typography.body1 = {
   fontSize: '1rem', // 13 px b.16
   [theme.breakpoints.up('lg')]: {

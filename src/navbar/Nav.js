@@ -104,7 +104,7 @@ const useStyles = makeStyles(theme => ({
       }
     },
     [theme.breakpoints.up('sm')]: {
-      marginRight: theme.spacing(10)
+      marginRight: theme.spacing(7)
     }
   },
   nav: {
