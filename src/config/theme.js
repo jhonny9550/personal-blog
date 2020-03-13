@@ -21,10 +21,9 @@ const nunito = {
 
 let theme = createMuiTheme({
   breakpoints: {
-    keys: ['xs', 'xm', 'sm', 'md', 'lg', 'xl'],
+    keys: ['xs', 'sm', 'md', 'lg', 'xl'],
     values: {
-      xs: 0,
-      xm: 400,
+      xs: 320,
       sm: 600,
       md: 960,
       lg: 1366,

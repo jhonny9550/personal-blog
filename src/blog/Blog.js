@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { uniques } from '../utils/array';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Hidden } from '@material-ui/core';
 import DateBullet from './DateBullet';
 import PostCard from './PostCard';
 import mockedPosts from './posts.mock';
@@ -34,7 +34,18 @@ const Blog = () => {
     ));
   }, [classes]);
 
-  return <>{groupMemo}</>;
+  return (
+    <>
+      <Hidden only={['xs', 'sm']}>{groupMemo}</Hidden>
+      <Hidden only={['md', 'lg', 'xl']}>
+        <div className={classes.list}>
+          {mockedPosts.map((p, i) => (
+            <PostCard {...p} key={i} />
+          ))}
+        </div>
+      </Hidden>
+    </>
+  );
 };
 
 const useStyles = makeStyles(theme => ({
@@ -50,6 +61,15 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     display: 'flex',
     justifyContent: 'space-evenly'
+  },
+  list: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    '& > *': {
+      marginBottom: theme.spacing(4),
+      marginTop: theme.spacing(4)
+    }
   }
 }));
 

@@ -46,9 +46,14 @@ const useStyles = makeStyles(theme => ({
   root: {
     borderRadius: 20,
     display: 'flex',
-    maxHeight: 200,
+    flexDirection: 'column',
     overflow: 'hidden',
-    width: 700
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      maxHeight: 200,
+      width: 700,
+      flexDirection: 'row'
+    }
   },
   media: {
     height: 200,
@@ -61,16 +66,27 @@ const useStyles = makeStyles(theme => ({
     WebkitBoxOrient: 'vertical'
   },
   content: {
-    position: 'relative'
+    position: 'relative',
+    [theme.breakpoints.down('md')]: {
+      '&:last-child': {
+        paddingBottom: 0
+      }
+    }
   },
   actions: {
-    bottom: 0,
     justifyContent: 'space-between',
-    left: 0,
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2),
-    position: 'absolute',
-    width: '100%'
+    marginTop: theme.spacing(1),
+    position: 'relative',
+    paddingLeft: 0,
+    paddingRight: 0,
+    [theme.breakpoints.up('sm')]: {
+      bottom: 0,
+      left: 0,
+      paddingLeft: theme.spacing(2),
+      paddingRight: theme.spacing(2),
+      position: 'absolute',
+      width: '100%'
+    }
   },
   reading: {
     alignItems: 'center',

@@ -4,6 +4,7 @@ import Nav from './navbar/Nav';
 import Routes from './Routes';
 import { ThemeProvider, CssBaseline, Container } from '@material-ui/core';
 import theme from './config/theme';
+import Footer from './footer/Footer';
 
 function App() {
   return (
@@ -11,10 +12,13 @@ function App() {
       <CssBaseline />
       <Router>
         <Nav />
-        <Container disableGutters fixed maxWidth="md">
+        <Container disableGutters fixed maxWidth='md'>
           <Routes />
         </Container>
       </Router>
+      <Container disableGutters fixed maxWidth='md'>
+        <Footer />
+      </Container>
     </ThemeProvider>
   );
 }
