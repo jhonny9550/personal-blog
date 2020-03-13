@@ -9,19 +9,26 @@ const DateBullet = ({ date, first, last }) => {
   const classes = useStyles();
   date = new Date(date);
   return (
-    <div
-      className={clsx([
-        classes.root,
-        { [classes.first]: first, [classes.last]: last }
-      ])}
-    >
-      <div className={classes.circle}>
-        <Typography variant='h3' color='textSecondary'>
-          {date.getUTCDate()}
+    <div className={classes.root}>
+      {first && (
+        <Typography variant='h5' color='secondary'>
+          {date.getUTCFullYear()}
         </Typography>
-        <Typography variant='subtitle1' color='textSecondary'>
-          {monthNames[date.getUTCMonth()].substr(0, 3)}
-        </Typography>
+      )}
+      <div
+        className={clsx([
+          classes.box,
+          { [classes.first]: first, [classes.last]: last }
+        ])}
+      >
+        <div className={classes.circle}>
+          <Typography variant='h3' color='textSecondary'>
+            {date.getUTCDate()}
+          </Typography>
+          <Typography variant='subtitle1' color='textSecondary'>
+            {monthNames[date.getUTCMonth()].substr(0, 3)}
+          </Typography>
+        </div>
       </div>
     </div>
   );
@@ -29,6 +36,9 @@ const DateBullet = ({ date, first, last }) => {
 
 const useStyles = makeStyles(theme => ({
   root: {
+    textAlign: 'center'
+  },
+  box: {
     paddingBottom: theme.spacing(6),
     paddingTop: theme.spacing(6),
     position: 'relative',
@@ -64,6 +74,11 @@ const useStyles = makeStyles(theme => ({
   },
   last: {
     paddingBottom: theme.spacing(10)
+  },
+  year: {
+    left: 'calc(50% - 20px)',
+    position: 'absolute',
+    top: -20
   }
 }));
 

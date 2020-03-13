@@ -9,11 +9,12 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import WatchLater from '@material-ui/icons/WatchLater';
 import ArrowForward from '@material-ui/icons/ArrowForward';
+import clsx from 'clsx';
 
-const PostCard = ({ description, reading, thumbnail, title }) => {
+const PostCard = ({ description, first, reading, thumbnail, title }) => {
   const classes = useStyles();
   return (
-    <Card className={classes.root}>
+    <Card className={clsx([classes.root, { [classes.first]: first }])}>
       <CardMedia className={classes.media} image={thumbnail} title={title} />
       <CardContent className={classes.content}>
         <Typography gutterBottom variant='h5' component='h2'>
@@ -29,7 +30,7 @@ const PostCard = ({ description, reading, thumbnail, title }) => {
         </Typography>
         <CardActions className={classes.actions}>
           <span className={classes.reading}>
-            <WatchLater color="secondary" />
+            <WatchLater color='secondary' />
             <span>{reading} minutes reading</span>
           </span>
           <Button size='small' color='secondary' endIcon={<ArrowForward />}>
@@ -45,11 +46,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     borderRadius: 20,
     display: 'flex',
-    marginBottom: theme.spacing(6),
-    marginTop: theme.spacing(6),
     maxHeight: 200,
-    maxWidth: 700,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    width: 700
   },
   media: {
     height: 200,
@@ -80,6 +79,9 @@ const useStyles = makeStyles(theme => ({
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1)
     }
+  },
+  first: {
+    marginTop: '3rem'
   }
 }));
 

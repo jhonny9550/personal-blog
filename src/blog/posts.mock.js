@@ -20,7 +20,7 @@ const mockedPosts = [
   {
     date: '2019-12-28',
     title: 'Flat components are awesome',
-    description: "Do y'all guys really know how a flat design looks like?",
+    description: "Do y'all guys really know what a flat design looks like?",
     reading: 4,
     thumbnail: 'https://miro.medium.com/max/600/1*bqt8t5vPveFWPWc_1FZaRA.jpeg'
   }
