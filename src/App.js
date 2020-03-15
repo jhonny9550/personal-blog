@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Nav from './navbar/Nav';
 import Routes from './Routes';
-import { ThemeProvider, CssBaseline, Container } from '@material-ui/core';
+import { ThemeProvider, CssBaseline } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
 import theme from './config/theme';
 import Footer from './footer/Footer';
 
@@ -16,9 +17,7 @@ function App() {
           <Routes />
         </Container>
       </Router>
-      <Container disableGutters fixed maxWidth='md'>
-        <Footer />
-      </Container>
+      <Footer />
     </ThemeProvider>
   );
 }
