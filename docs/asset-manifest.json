@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5a6dbe76.chunk.css",
+    "main.js": "/static/js/main.4d6e683c.chunk.js",
+    "main.js.map": "/static/js/main.4d6e683c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.721919a7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.721919a7.js.map",
+    "static/js/2.91ebca31.chunk.js": "/static/js/2.91ebca31.chunk.js",
+    "static/js/2.91ebca31.chunk.js.map": "/static/js/2.91ebca31.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.905a4cdd34195a7304bf1b6c37c22e0a.js": "/precache-manifest.905a4cdd34195a7304bf1b6c37c22e0a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.5a6dbe76.chunk.css.map": "/static/css/main.5a6dbe76.chunk.css.map",
+    "static/js/2.91ebca31.chunk.js.LICENSE.txt": "/static/js/2.91ebca31.chunk.js.LICENSE.txt",
+    "static/media/Nunito-Regular.ttf": "/static/media/Nunito-Regular.d2e691bc.ttf",
+    "static/media/logo.410199d1.svg": "/static/media/logo.410199d1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.721919a7.js",
+    "static/js/2.91ebca31.chunk.js",
+    "static/css/main.5a6dbe76.chunk.css",
+    "static/js/main.4d6e683c.chunk.js"
+  ]
+}

@@ -32,36 +32,36 @@ const Home = () => {
             </span>
           </Typography>
           <div>
-            <IconButton color='primary' aria-label='GitHub'>
-              <a
-                className={classes.link}
-                href='https://github.com/jhonny9550'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
+            <a
+              className={classes.link}
+              href='https://github.com/jhonny9550'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              <IconButton color='primary' aria-label='GitHub'>
                 <GitHubIcon />
-              </a>
-            </IconButton>
-            <IconButton color='primary' aria-label='LinkedIn'>
-              <a
-                className={classes.link}
-                href='https://www.linkedin.com/in/jhonny9550/'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
+              </IconButton>
+            </a>
+            <a
+              className={classes.link}
+              href='https://www.linkedin.com/in/jhonny9550/'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              <IconButton color='primary' aria-label='LinkedIn'>
                 <LinkedInIcon />
-              </a>
-            </IconButton>
-            <IconButton color='primary' aria-label='Twitter'>
-              <a
-                className={classes.link}
-                href='https://twitter.com/jhotinez'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
+              </IconButton>
+            </a>
+            <a
+              className={classes.link}
+              href='https://twitter.com/jhotinez'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              <IconButton color='primary' aria-label='Twitter'>
                 <TwitterIcon />
-              </a>
-            </IconButton>
+              </IconButton>
+            </a>
           </div>
         </div>
       </div>
