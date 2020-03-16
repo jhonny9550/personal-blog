@@ -2,6 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const Home = () => {
   const classes = useStyles();
@@ -27,6 +31,38 @@ const Home = () => {
               🌄
             </span>
           </Typography>
+          <div>
+            <IconButton color='primary' aria-label='GitHub'>
+              <a
+                className={classes.link}
+                href='https://github.com/jhonny9550'
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                <GitHubIcon />
+              </a>
+            </IconButton>
+            <IconButton color='primary' aria-label='LinkedIn'>
+              <a
+                className={classes.link}
+                href='https://www.linkedin.com/in/jhonny9550/'
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                <LinkedInIcon />
+              </a>
+            </IconButton>
+            <IconButton color='primary' aria-label='Twitter'>
+              <a
+                className={classes.link}
+                href='https://twitter.com/jhotinez'
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                <TwitterIcon />
+              </a>
+            </IconButton>
+          </div>
         </div>
       </div>
       <div className={classes.info}>
@@ -125,6 +161,11 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       padding: 'unset'
     }
+  },
+  link: {
+    textDecoration: 'none',
+    fontStyle: 'none',
+    color: 'inherit'
   }
 }));
 
