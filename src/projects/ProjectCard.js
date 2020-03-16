@@ -5,9 +5,10 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
+import Chip from '@material-ui/core/Chip';
 import Typography from '@material-ui/core/Typography';
 
-const ProjectCard = ({ description, image, subtitle, title }) => {
+const ProjectCard = ({ description, image, subtitle, tags, title }) => {
   const classes = useStyles();
   return (
     <Card className={classes.root} raised>
@@ -18,6 +19,17 @@ const ProjectCard = ({ description, image, subtitle, title }) => {
       <CardContent className={classes.content}>
         <Typography variant='subtitle1'>{subtitle}</Typography>
         <Typography variant='body2'>{description}</Typography>
+        <div className={classes.tags}>
+          {tags.map((t, i) => (
+            <Chip
+              label={'#' + t}
+              component='a'
+              href={'#' + t}
+              clickable
+              key={i}
+            />
+          ))}
+        </div>
       </CardContent>
     </Card>
   );
@@ -37,14 +49,28 @@ const useStyles = makeStyles(theme => ({
   },
   image: {
     textAlign: 'center'
+  },
+  tags: {
+    '& > *': {
+      margin: theme.spacing(1),
+      marginLeft: 0
+    },
+    [theme.breakpoints.up('sm')]: {
+      display: 'none'
+    }
   }
 }));
+
+ProjectCard.defaultProps = {
+  tags: []
+};
 
 ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired
+  subtitle: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string)
 };
 
 export default ProjectCard;

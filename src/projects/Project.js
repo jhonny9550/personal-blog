@@ -19,6 +19,7 @@ const Project = ({ description, image, reversed, subtitle, tags, title }) => {
           image={image}
           subtitle={subtitle}
           title={title}
+          tags={tags}
         />
       </div>
       <div className={classes.tags}>
@@ -44,16 +45,19 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(2),
     position: 'relative',
     '&::after': {
-      borderColor: theme.palette.divider,
-      borderStyle: 'solid',
-      borderWidth: 1,
-      content: "''",
-      left: '100%',
-      position: 'absolute',
-      top: 'calc(50% - 2px)',
-      height: 2,
-      width: '50%',
-      'z-index': -1
+      [theme.breakpoints.up('sm')]: {
+        borderColor: theme.palette.divider,
+        borderStyle: 'solid',
+        borderWidth: 1,
+        content: "''",
+        left: '100%',
+        position: 'absolute',
+        top: 'calc(50% - 2px)',
+        height: 2,
+        width: '50%',
+        'z-index': -1,
+        display: 'block'
+      }
     }
   },
   reversed: {
@@ -67,12 +71,15 @@ const useStyles = makeStyles(theme => ({
   },
   tags: {
     backgroundColor: theme.palette.background.default,
-    display: 'flex',
+    display: 'none',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     paddingLeft: theme.spacing(7),
-    paddingRight: theme.spacing(7)
+    paddingRight: theme.spacing(7),
+    [theme.breakpoints.up('sm')]: {
+      display: 'flex'
+    }
   },
   link: {
     textDecoration: 'none',
