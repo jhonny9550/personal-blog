@@ -14,7 +14,7 @@ import clsx from 'clsx';
 const PostCard = ({ description, first, reading, thumbnail, title }) => {
   const classes = useStyles();
   return (
-    <Card className={clsx([classes.root, { [classes.first]: first }])}>
+    <Card className={clsx([classes.root, { [classes.first]: first }])} raised>
       <CardMedia className={classes.media} image={thumbnail} title={title} />
       <CardContent className={classes.content}>
         <Typography gutterBottom variant='h5' component='h2'>

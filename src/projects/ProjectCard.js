@@ -10,14 +10,14 @@ import Typography from '@material-ui/core/Typography';
 const ProjectCard = ({ description, image, subtitle, title }) => {
   const classes = useStyles();
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} raised>
       <CardHeader title={title} className={classes.title} />
       <CardMedia title={title} className={classes.image}>
         <img src={image} alt={title} height='auto' width='50%' />
       </CardMedia>
       <CardContent className={classes.content}>
         <Typography variant='subtitle1'>{subtitle}</Typography>
-        <Typography variant='body1'>{description}</Typography>
+        <Typography variant='body2'>{description}</Typography>
       </CardContent>
     </Card>
   );

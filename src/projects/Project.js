@@ -66,7 +66,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   tags: {
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: theme.palette.background.default,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

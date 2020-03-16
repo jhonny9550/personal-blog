@@ -1,7 +1,6 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core';
 import grey from '@material-ui/core/colors/grey';
 import teal from '@material-ui/core/colors/teal';
-import common from '@material-ui/core/colors/common';
 
 import NunitoRegularTtf from '../assets/fonts/Nunito-Regular.ttf';
 
@@ -39,7 +38,7 @@ let theme = createMuiTheme({
       dark: teal[500]
     },
     background: {
-      default: common.white
+      default: grey[100]
     }
   },
   typography: {
@@ -56,12 +55,19 @@ let theme = createMuiTheme({
 
 theme.typography.h5.fontWeight = 700;
 theme.typography.h3.fontWeight = 700;
-theme.typography.subtitle1.fontWeight = 900;
+theme.typography.subtitle1.fontWeight = 800;
 
 theme.typography.body1 = {
   fontSize: '1rem', // 13 px b.16
   [theme.breakpoints.up('lg')]: {
     fontSize: '1.3rem'
+  }
+};
+
+theme.typography.body2 = {
+  fontSize: '0.9rem', // 13 px b.16
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '1.2rem'
   }
 };
 
