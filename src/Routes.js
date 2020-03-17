@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './home/Home';
 import Blog from './blog/Blog';
 import Projects from './projects/Projects';
@@ -19,6 +19,9 @@ const Routes = () => {
       <Route path={ROUTE_NAMES.PROJECTS} component={Projects} />
       <Route path={ROUTE_NAMES.NOT_FOUND}>
         <h1>Page not found :(</h1>
+      </Route>
+      <Route path='*'>
+        <Redirect to={ROUTE_NAMES.HOME} />
       </Route>
     </Switch>
   );
