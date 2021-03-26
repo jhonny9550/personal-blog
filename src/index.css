@@ -16,28 +16,97 @@ code {
     monospace;
 }
 
-@layer components {
-  /* Text */
-  .heading {
+@layer base {
+  h1 {
     @apply font-extrabold;
     font-size: 40pt;
   }
-  .title {
+  h2 {
     @apply font-extrabold;
     font-size: 20pt;
   }
-  .body {
-    font-size: 14pt;
-  }
-  .lbody {
+  h3 {
     @apply font-semibold;
     font-size: 14pt;
   }
-  .sbody {
+  p {
+    font-size: 14pt;
+  }
+  p.sbody {
+    @apply text-grey;
     font-size: 12pt;
   }
+}
+
+@layer components {
   /* Buttons */
-  .button {
-    @apply font-bold;
+  .btn {
+    @apply font-bold disabled:opacity-50 disabled:cursor-default;
+    border-radius: 23px;
+    height: 45px;
+    font-size: 14pt;
+    min-width: 112px;
+  }
+  .btn-default {
+    @apply btn bg-white text-black;
+  }
+  .btn-default-outlined {
+    @apply btn bg-grey-light text-black;
+  }
+  .btn-blue {
+    @apply btn bg-blue text-white;
+  }
+  .btn-blue:hover {
+    @apply bg-blue-dark disabled:bg-blue;
+  }
+  .btn-blue > svg {
+    fill: #ffffff;
+  }
+  .btn-blue-outlined {
+    @apply btn bg-transparent text-blue border-blue border-2 border-solid;
+  }
+  .btn-blue-outlined:hover {
+    @apply bg-blue text-white border-0 disabled:bg-transparent disabled:border-2 disabled:text-blue;
+  }
+  .btn-yellow {
+    @apply btn bg-yellow text-black;
+  }
+  .btn-yellow:hover {
+    @apply bg-yellow-dark disabled:bg-yellow;
+  }
+  .btn-yellow > svg {
+    fill: #ffffff;
+  }
+  .btn-yellow-outlined {
+    @apply btn bg-transparent text-yellow border-yellow border-2 border-solid;
+  }
+  .btn-yellow-outlined:hover {
+    @apply bg-yellow text-white border-0 disabled:bg-transparent disabled:border-2 disabled:text-yellow;
+  }
+  .btn-black {
+    @apply btn bg-black text-white;
+  }
+  .btn-square {
+    border-radius: 5px;
+  }
+  .btn-small {
+    @apply text-sm;
+    height: 27px;
+    min-width: 60px;
+  }
+  .btn-large {
+    @apply w-full;
+  }
+  .btn-fab {
+    @apply rounded-full h-auto p-4;
+    min-width: 40px;
+  }
+  .btn-fab-small {
+    @apply btn-fab p-1;
+    min-width: 20px;
+  }
+  .btn-fab > svg,
+  .btn-fab-small > svg {
+    margin: 0 auto;
   }
 }
