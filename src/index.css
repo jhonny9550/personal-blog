@@ -60,7 +60,7 @@ code {
     @apply bg-blue-dark disabled:bg-blue;
   }
   .btn-blue > svg {
-    fill: #ffffff;
+    stroke: #ffffff;
   }
   .btn-blue-outlined {
     @apply btn bg-transparent text-blue border-blue border-2 border-solid;
@@ -75,7 +75,7 @@ code {
     @apply bg-yellow-dark disabled:bg-yellow;
   }
   .btn-yellow > svg {
-    fill: #ffffff;
+    stroke: #ffffff;
   }
   .btn-yellow-outlined {
     @apply btn bg-transparent text-yellow border-yellow border-2 border-solid;
