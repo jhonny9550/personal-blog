@@ -8,6 +8,7 @@ export type TextInputProps = {
   placeholder?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => string;
   className?: string;
+  endIcon?: React.ReactNode;
 };
 
 const TextInput: React.FC<TextInputProps> = ({
@@ -18,6 +19,7 @@ const TextInput: React.FC<TextInputProps> = ({
   label = "",
   placeholder = "",
   className = "",
+  endIcon,
 }) => {
   const [v, setV] = useState(value);
 
@@ -46,6 +48,9 @@ const TextInput: React.FC<TextInputProps> = ({
           value={v}
           onChange={handleOnChange}
         />
+        {endIcon && (
+          <div className="absolute inset-y-0 right-0 p-2">{endIcon}</div>
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import { Eye, EyeOff } from "react-feather";
 import Button from "../components/Button";
 import HomeTitle from "../components/HomeTitle";
 import TextInput from "../components/TextInput";
@@ -6,6 +7,7 @@ import TextInput from "../components/TextInput";
 const Signin = () => {
   const [loading, setLoading] = useState(false);
   const [remember, setRemember] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleOnChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,6 +15,10 @@ const Signin = () => {
     },
     []
   );
+
+  const handleToggleShowPassword = useCallback(() => {
+    setShowPassword((s) => !s);
+  }, []);
 
   return (
     <div className="mx-72">
@@ -22,8 +28,21 @@ const Signin = () => {
         <TextInput
           id="password"
           label="Password"
-          type="password"
+          type={showPassword ? "text" : "password"}
           className="mt-2"
+          endIcon={
+            showPassword ? (
+              <EyeOff
+                className="cursor-pointer"
+                onClick={handleToggleShowPassword}
+              />
+            ) : (
+              <Eye
+                className="cursor-pointer"
+                onClick={handleToggleShowPassword}
+              />
+            )
+          }
         />
         <label className="inline-flex items-center mt-3">
           <input
