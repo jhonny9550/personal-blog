@@ -1,11 +1,4 @@
-import React, {
-  ReactElement,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useCallback, useState } from "react";
 
 export type TextInputProps = {
   id: string;
@@ -13,11 +6,8 @@ export type TextInputProps = {
   value?: string | number;
   label?: string;
   placeholder?: string;
-  fullWidth?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => string;
-  outlined?: boolean;
-  startIcon?: ReactElement;
-  endIcon?: ReactElement;
+  className?: string;
 };
 
 const TextInput: React.FC<TextInputProps> = ({
@@ -26,11 +16,8 @@ const TextInput: React.FC<TextInputProps> = ({
   type = "text",
   onChange,
   label = "",
-  fullWidth = false,
   placeholder = "",
-  outlined = false,
-  startIcon,
-  endIcon,
+  className = "",
 }) => {
   const [v, setV] = useState(value);
 
@@ -43,11 +30,11 @@ const TextInput: React.FC<TextInputProps> = ({
   );
 
   return (
-    <div className="max-w-xs">
+    <div className={`max-w-xs ${className}`}>
       <label htmlFor={id} className="block text-gray-700 font-bold">
         {label}
       </label>
-      <div className="mt-1 relative rounded-md shadow-md">
+      <div className="mt-1 relative rounded-md shadow-sm">
         <input
           id={id}
           name={id}

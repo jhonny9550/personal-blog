@@ -52,14 +52,16 @@ code {
   svg {
     @apply text-gray-700 stroke-current;
   }
+  button:focus {
+    @apply outline-none;
+  }
 }
 
 @layer components {
   /* Buttons */
   .btn {
-    @apply font-bold disabled:opacity-50 disabled:cursor-default;
-    border-radius: 23px;
-    height: 45px;
+    @apply font-bold py-2 disabled:opacity-50 disabled:cursor-default;
+    border-radius: 5px;
     font-size: 14pt;
     min-width: 112px;
   }
@@ -83,6 +85,15 @@ code {
   }
   .btn-blue-outlined:hover {
     @apply bg-blue text-white border-0 disabled:bg-transparent disabled:border-2 disabled:text-blue;
+  }
+  .btn-white {
+    @apply btn bg-white text-blue;
+  }
+  .btn-white:hover {
+    @apply bg-grey-light disabled:bg-white;
+  }
+  .btn-white > svg {
+    stroke: #ffffff;
   }
   .btn-yellow {
     @apply btn bg-yellow text-black;
