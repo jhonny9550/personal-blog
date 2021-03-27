@@ -17,24 +17,40 @@ code {
 }
 
 @layer base {
+  html,
+  body,
+  #root {
+    @apply h-full bg-white;
+  }
   h1 {
-    @apply font-extrabold;
+    @apply font-extrabold text-gray-700;
     font-size: 40pt;
   }
   h2 {
-    @apply font-extrabold;
+    @apply font-extrabold text-gray-700;
     font-size: 20pt;
   }
   h3 {
-    @apply font-semibold;
+    @apply font-semibold text-gray-700;
     font-size: 14pt;
   }
   p {
+    @apply text-gray-700;
     font-size: 14pt;
   }
-  p.sbody {
+  span.sbody {
     @apply text-grey;
     font-size: 12pt;
+  }
+  input {
+    @apply text-gray-700 px-3 py-2 appearance-none border border-gray-500 border-solid;
+    font-size: 12pt;
+  }
+  input:focus {
+    @apply outline-none;
+  }
+  svg {
+    @apply text-gray-700 stroke-current;
   }
 }
 

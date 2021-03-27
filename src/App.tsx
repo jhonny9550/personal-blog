@@ -1,5 +1,6 @@
 import React from "react";
-import { Airplay, ArrowLeft } from "react-feather";
+import { MapPin } from "react-feather";
+import TextInput from "./components/TextInput";
 
 const App = () => (
   <div className="font-sans">
@@ -8,15 +9,13 @@ const App = () => (
     <h3>The beginning:</h3>
     <p>Here is the story about how I came from Colombia to Australia</p>
     <p className="sbody">Shhhh... don't share it yet.</p>
-    <button className="btn-blue" disabled>
-      Share
-    </button>
-    <button className="btn-blue btn-fab">
-      <Airplay />
-    </button>
-    <button className="btn-yellow btn-fab-small">
-      <ArrowLeft />
-    </button>
+    <TextInput
+      id="to"
+      label="From"
+      placeholder="Enter a name of a city you're traveling to"
+      endIcon={<MapPin className="text-yellow" />}
+      outlined
+    />
   </div>
 );
 
