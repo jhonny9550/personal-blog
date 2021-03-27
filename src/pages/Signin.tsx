@@ -46,19 +46,24 @@ const Signin = () => {
             )
           }
         />
-        <label className="inline-flex items-center mt-3">
-          <input
-            type="checkbox"
-            className="form-checkbox h-5 w-5 text-gray-600"
-            checked={remember}
-            onChange={handleOnChange}
-          />
-          <span className="sbody ml-2">Remember me</span>
-        </label>
+        <div className="flex items-center justify-between mt-3">
+          <label className="inline-flex items-center">
+            <input
+              type="checkbox"
+              className="form-checkbox h-5 w-5 text-gray-600"
+              checked={remember}
+              onChange={handleOnChange}
+            />
+            <span className="sbody ml-2">Remember me</span>
+          </label>
+          <Link className="sbody" to={ROUTE_NAMES.RESET_PASSWORD}>
+            Forgot password?
+          </Link>
+        </div>
         <Button
           loading={loading}
           disabled={loading}
-          className="btn-blue btn-large mt-4"
+          className="btn-blue btn-large mt-8"
         >
           Log in
         </Button>
