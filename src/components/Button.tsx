@@ -1,5 +1,4 @@
 import React from "react";
-import { Loader } from "react-feather";
 import { ReactComponent as Spinner } from "../assets/icons/spinner.svg";
 
 type ButtonColor = "default" | "blue" | "yellow";
@@ -9,6 +8,7 @@ export type ButtonProps = {
   color?: ButtonColor;
   loading?: boolean;
   disabled?: boolean;
+  startIcon?: React.ReactNode;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,6 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   color = "default",
   loading = false,
   disabled = false,
+  startIcon,
 }) => {
   return (
     <button
@@ -33,6 +34,7 @@ const Button: React.FC<ButtonProps> = ({
       {loading && (
         <Spinner className="animate-spin h-5 w-5 mr-3 -ml-4" strokeWidth={6} />
       )}
+      {startIcon && <div className="mr-3 -ml-4">{startIcon}</div>}
       {children}
     </button>
   );

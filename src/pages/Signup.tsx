@@ -1,22 +1,15 @@
 import React, { useCallback, useState } from "react";
 import { Eye, EyeOff } from "react-feather";
-import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import HomeTitle from "../components/HomeTitle";
 import TextInput from "../components/TextInput";
+import { ReactComponent as Google } from "../assets/icons/google.svg";
+import { Link } from "react-router-dom";
 import ROUTE_NAMES from "../config/routes";
 
-const Signin = () => {
+const Signup = () => {
   const [loading] = useState(false);
-  const [remember, setRemember] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
-  const handleOnChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setRemember(e.target.checked);
-    },
-    []
-  );
 
   const handleToggleShowPassword = useCallback(() => {
     setShowPassword((s) => !s);
@@ -46,26 +39,29 @@ const Signin = () => {
             )
           }
         />
-        <label className="inline-flex items-center mt-3">
-          <input
-            type="checkbox"
-            className="form-checkbox h-5 w-5 text-gray-600"
-            checked={remember}
-            onChange={handleOnChange}
-          />
-          <span className="sbody ml-2">Remember me</span>
-        </label>
+        <TextInput
+          id="cpassword"
+          label="Confirm password"
+          type="password"
+          className="mt-2"
+        />
         <Button
           loading={loading}
           disabled={loading}
           className="btn-blue btn-large mt-4"
         >
-          Log in
+          Sign up
         </Button>
-        <Link className="text-center" to={ROUTE_NAMES.SIGN_UP}>
+        <Button
+          className="btn-white border border-grey border-solid btn-large mt-4 text-gray-700"
+          startIcon={<Google className="no-stroke-color" />}
+        >
+          Sign up using Google
+        </Button>
+        <Link className="text-center" to={ROUTE_NAMES.SIGN_IN}>
           <p className="sbody mt-3">
-            Don't have an account?{" "}
-            <span className="font-bold text-blue-dark">Sign up</span>
+            Already have an account?{" "}
+            <span className="font-bold text-blue-dark">Log in</span>
           </p>
         </Link>
       </div>
@@ -73,4 +69,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Signup;

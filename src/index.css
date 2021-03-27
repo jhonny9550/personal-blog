@@ -22,31 +22,12 @@ code {
   #root {
     @apply h-full bg-white;
   }
-  h1 {
-    @apply font-extrabold text-gray-700;
-    font-size: 40pt;
-  }
-  h2 {
-    @apply font-extrabold text-gray-700;
-    font-size: 20pt;
-  }
-  h3 {
-    @apply font-semibold text-gray-700;
-    font-size: 14pt;
-  }
-  p {
-    @apply text-gray-700;
-    font-size: 14pt;
-  }
-  span.sbody {
-    @apply text-grey;
-    font-size: 12pt;
-  }
   input {
     @apply text-gray-700 px-3 py-2 border border-gray-500 border-solid;
     font-size: 12pt;
   }
-  input[type="text"] {
+  input[type="text"],
+  input[type="password"] {
     @apply appearance-none;
   }
   input:focus {
@@ -61,11 +42,32 @@ code {
 }
 
 @layer components {
+  /* Text */
+  .title {
+    @apply font-extrabold text-gray-700;
+    font-size: 40pt;
+  }
+  .subtitle {
+    @apply font-extrabold text-gray-700;
+    font-size: 20pt;
+  }
+  .lbody {
+    @apply font-semibold text-gray-700;
+    font-size: 14pt;
+  }
+  .body {
+    @apply text-gray-700;
+    font-size: 14pt;
+  }
+  .sbody {
+    @apply text-grey;
+    font-size: 12pt;
+  }
   /* Buttons */
   .btn {
     @apply font-bold py-2 disabled:opacity-50 disabled:cursor-default;
     border-radius: 5px;
-    font-size: 14pt;
+    font-size: 12pt;
     min-width: 112px;
   }
   .btn-default {
@@ -139,4 +141,8 @@ code {
   .btn-fab-small > svg {
     margin: 0 auto;
   }
+}
+
+.no-stroke-color {
+  stroke: none;
 }
