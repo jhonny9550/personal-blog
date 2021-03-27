@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import Button from "../components/Button";
 import HomeTitle from "../components/HomeTitle";
 import TextInput from "../components/TextInput";
 
 const Signin = () => {
+  const [loading, setLoading] = useState(true);
   return (
     <div className="mx-72">
       <HomeTitle />
@@ -14,7 +16,13 @@ const Signin = () => {
           type="password"
           className="mt-2"
         />
-        <button className="btn-blue btn-large mt-4">Log in</button>
+        <Button
+          loading={loading}
+          disabled={loading}
+          className="btn-blue btn-large mt-4"
+        >
+          Log in
+        </Button>
       </div>
     </div>
   );
