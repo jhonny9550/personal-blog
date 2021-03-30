@@ -10,10 +10,10 @@ const Home = () => {
       <HomeTitle />
       <div className="flex-grow sm:h-48"></div>
       <div className="text-center mb-8 sm:text-left">
-        <Link to={ROUTE_NAMES.SIGN_UP}>
+        <Link className="block" to={ROUTE_NAMES.SIGN_UP}>
           <Button className="btn-white block w-72">Sign up</Button>
         </Link>
-        <Link to={ROUTE_NAMES.SIGN_IN}>
+        <Link className="block" to={ROUTE_NAMES.SIGN_IN}>
           <Button className="btn-blue block w-72 mt-4">Log in</Button>
         </Link>
       </div>

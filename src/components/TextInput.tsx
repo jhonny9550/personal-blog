@@ -6,7 +6,7 @@ export type TextInputProps = {
   value?: string | number;
   label?: string;
   placeholder?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   endIcon?: React.ReactNode;
 };

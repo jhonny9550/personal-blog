@@ -4,6 +4,8 @@ const ROUTE_NAMES = {
   SIGN_UP: "/signup",
   VALIDATE_ACCOUNT: "/signup/validate",
   RESET_PASSWORD: "/signup/reset",
+  ADMIN: "/admin",
+  DASHBOARD: "/dashboard",
   NOT_FOUND: "/404",
   ABOUT: "/about",
 };

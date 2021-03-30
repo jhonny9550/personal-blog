@@ -27,6 +27,7 @@ code {
     font-size: 12pt;
   }
   input[type="text"],
+  input[type="email"],
   input[type="password"] {
     @apply appearance-none;
   }

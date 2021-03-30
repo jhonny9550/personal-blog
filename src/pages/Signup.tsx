@@ -19,7 +19,7 @@ const Signup = () => {
     <div className="sm:mx-72">
       <HomeTitle />
       <div className="bg-white p-4 rounded-md shadow-md max-w-xs mx-auto sm:mx-0">
-        <TextInput id="email" label="Email" type="text" />
+        <TextInput id="email" label="Email" type="email" />
         <TextInput
           id="password"
           label="Password"
@@ -48,7 +48,7 @@ const Signup = () => {
         <Button
           loading={loading}
           disabled={loading}
-          className="btn-blue btn-large mt-4"
+          className="btn-blue btn-large mt-6"
         >
           Sign up
         </Button>
@@ -59,7 +59,7 @@ const Signup = () => {
           Sign up using Google
         </Button>
         <Link className="text-center" to={ROUTE_NAMES.SIGN_IN}>
-          <p className="sbody mt-3">
+          <p className="sbody mt-12">
             Already have an account?{" "}
             <span className="font-bold text-blue-dark">Log in</span>
           </p>

@@ -9,6 +9,7 @@ export type ButtonProps = {
   loading?: boolean;
   disabled?: boolean;
   startIcon?: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,6 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   color = "default",
   loading = false,
   disabled = false,
+  onClick,
   startIcon,
 }) => {
   return (
@@ -30,6 +32,7 @@ const Button: React.FC<ButtonProps> = ({
       `}
       disabled={disabled}
       type="button"
+      onClick={onClick}
     >
       {loading && (
         <Spinner className="animate-spin h-5 w-5 mr-3 -ml-4" strokeWidth={6} />
