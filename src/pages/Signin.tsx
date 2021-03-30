@@ -38,7 +38,7 @@ const Signin = () => {
   }, []);
 
   const handleOnLogin = useCallback(async () => {
-    const { data, errors } = await login({ variables: { email, password } });
+    const { data } = await login({ variables: { email, password } });
     const res = data?.login;
     if (!res) return;
     const { success, message, token, user } = res;

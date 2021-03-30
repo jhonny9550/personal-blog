@@ -29,6 +29,7 @@ const UserProvider: React.FC = ({ children }) => {
       }
       setLoading(false);
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return loading ? (
