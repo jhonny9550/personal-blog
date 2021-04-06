@@ -23,9 +23,9 @@ const UserProvider: React.FC = ({ children }) => {
         context: { headers: { Authorization } },
         variables: { userID: localUser.id },
       });
-      console.log("Data: ", data);
       if (data?.user.success) {
-        setUser(data.user.user);
+        const user = data.user.user;
+        setUser(user);
       }
       setLoading(false);
     })();

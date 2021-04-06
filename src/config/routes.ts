@@ -5,6 +5,7 @@ const ROUTE_NAMES = {
   VALIDATE_ACCOUNT: "/signup/validate",
   RESET_PASSWORD: "/signup/reset",
   ADMIN: "/admin",
+  POSTS: "/posts",
   DASHBOARD: "/dashboard",
   NOT_FOUND: "/404",
   ABOUT: "/about",

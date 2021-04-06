@@ -6,7 +6,7 @@ export const GET_USER = gql`
       code
       message
       success
-      users {
+      user {
         id
         email
         role
