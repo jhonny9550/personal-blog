@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 export type TextInputProps = {
   id: string;
@@ -40,10 +40,6 @@ const TextInput: React.FC<TextInputProps> = ({
     },
     [onChange]
   );
-
-  useEffect(() => {
-    console.log(error);
-  }, [error]);
 
   return (
     <div className={`max-w-xs ${className}`}>

@@ -7,6 +7,8 @@ import backgroundImage from "../assets/images/home-background.jpg";
 import Signup from "../pages/Signup";
 import Posts from "../pages/Posts";
 import Admin from "../pages/Admin";
+import PublicRoute from "./PublicRoute";
+import PrivateAdminRoute from "./PrivateAdminRoute";
 
 const HomeLayout: React.FC = ({ children }) => (
   <div
@@ -19,23 +21,27 @@ const HomeLayout: React.FC = ({ children }) => (
 
 const Routes = () => (
   <Switch>
-    <Route exact path={ROUTE_NAMES.HOME}>
+    <PublicRoute blockLoggedUsers exact path={ROUTE_NAMES.HOME}>
       <HomeLayout>
         <Home />
       </HomeLayout>
-    </Route>
-    <Route exact path={ROUTE_NAMES.SIGN_IN}>
+    </PublicRoute>
+    <PublicRoute blockLoggedUsers exact path={ROUTE_NAMES.SIGN_IN}>
       <HomeLayout>
         <Signin />
       </HomeLayout>
-    </Route>
-    <Route exact path={ROUTE_NAMES.SIGN_UP}>
+    </PublicRoute>
+    <PublicRoute blockLoggedUsers exact path={ROUTE_NAMES.SIGN_UP}>
       <HomeLayout>
         <Signup />
       </HomeLayout>
-    </Route>
-    <Route exact path={ROUTE_NAMES.POSTS} component={Posts} />
-    <Route exact path={ROUTE_NAMES.ADMIN} component={Admin} />
+    </PublicRoute>
+    <PublicRoute exact path={ROUTE_NAMES.POSTS}>
+      <Posts />
+    </PublicRoute>
+    <PrivateAdminRoute exact path={ROUTE_NAMES.ADMIN}>
+      <Admin />
+    </PrivateAdminRoute>
     <Route path={ROUTE_NAMES.NOT_FOUND}>Page not found</Route>
     <Route path="*">
       <Redirect to={ROUTE_NAMES.NOT_FOUND} />

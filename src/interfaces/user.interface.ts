@@ -6,6 +6,7 @@ export default interface User {
   name?: string;
   username?: string;
   password: string;
+  onboarding: boolean;
   validated: boolean;
   resetToken?: string;
   role: UserRole;

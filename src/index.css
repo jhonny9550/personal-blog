@@ -1,3 +1,4 @@
+/*! @import */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,7 +21,7 @@ code {
   html,
   body,
   #root {
-    @apply h-full bg-white;
+    @apply h-full bg-gray-100;
   }
   input {
     @apply text-gray-700 px-3 py-2 border border-gray-500 border-solid;
@@ -69,7 +70,6 @@ code {
     @apply font-bold py-2 disabled:opacity-50 disabled:cursor-default;
     border-radius: 5px;
     font-size: 12pt;
-    min-width: 112px;
   }
   .btn-default {
     @apply btn bg-white text-black;
@@ -90,7 +90,7 @@ code {
     @apply btn bg-transparent text-blue border-blue border-2 border-solid;
   }
   .btn-blue-outlined:hover {
-    @apply bg-blue text-white border-0 disabled:bg-transparent disabled:border-2 disabled:text-blue;
+    @apply bg-blue text-white border-transparent disabled:bg-transparent disabled:border-2 disabled:text-blue;
   }
   .btn-white {
     @apply btn bg-white text-blue;
@@ -114,7 +114,7 @@ code {
     @apply btn bg-transparent text-yellow border-yellow border-2 border-solid;
   }
   .btn-yellow-outlined:hover {
-    @apply bg-yellow text-white border-0 disabled:bg-transparent disabled:border-2 disabled:text-yellow;
+    @apply bg-yellow text-white border-transparent disabled:bg-transparent disabled:border-2 disabled:text-yellow;
   }
   .btn-black {
     @apply btn bg-black text-white;
@@ -142,8 +142,20 @@ code {
   .btn-fab-small > svg {
     margin: 0 auto;
   }
+  .slider-bullet {
+    @apply h-2 w-2 mx-1 rounded-full bg-gray-500;
+  }
+  .slider-bullet.slider-bullet-active {
+    @apply bg-blue;
+  }
 }
 
 .no-stroke-color {
   stroke: none;
+}
+
+.onboarding-fab-btn {
+  /* 16px according to the half of a small fab btn (32px) */
+  bottom: -16px;
+  left: calc(50% - 16px);
 }

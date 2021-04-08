@@ -4,13 +4,16 @@ import Routes from "./routes/Routes";
 import { ApolloProvider } from "@apollo/client";
 import GraphQLClient from "./graphql/client";
 import UserProvider from "./contexts/user.context";
+import Onboarding from "./pages/Onboarding";
 
 const App = () => (
   <ApolloProvider client={GraphQLClient}>
     <UserProvider>
-      <Router>
-        <Routes />
-      </Router>
+      <Onboarding>
+        <Router>
+          <Routes />
+        </Router>
+      </Onboarding>
     </UserProvider>
   </ApolloProvider>
 );

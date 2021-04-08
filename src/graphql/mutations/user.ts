@@ -10,6 +10,7 @@ export const SIGN_UP = gql`
         id
         email
         role
+        onboarding
         validated
       }
       token
@@ -27,6 +28,7 @@ export const LOGIN = gql`
         id
         email
         role
+        onboarding
         validated
         username
       }

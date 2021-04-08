@@ -38,19 +38,23 @@ const Signin = () => {
   }, []);
 
   const handleOnLogin = useCallback(async () => {
-    const { data } = await login({ variables: { email, password } });
-    const res = data?.login;
-    if (!res) return;
-    const { success, message, token, user } = res;
-    if (success) {
-      storeAuthToken(token);
-      if (user.role === USER_ROLES.ADMIN) {
-        history.replace(ROUTE_NAMES.ADMIN);
+    try {
+      const { data } = await login({ variables: { email, password } });
+      const res = data?.login;
+      if (!res) return;
+      const { success, message, token, user } = res;
+      if (success) {
+        storeAuthToken(token);
+        if (user.role === USER_ROLES.ADMIN) {
+          history.replace(ROUTE_NAMES.ADMIN);
+        } else {
+          history.replace(ROUTE_NAMES.POSTS);
+        }
       } else {
-        history.replace(ROUTE_NAMES.DASHBOARD);
+        setError(message);
       }
-    } else {
-      setError(message);
+    } catch (error) {
+      console.log(error);
     }
   }, [login, email, password, history]);
 
